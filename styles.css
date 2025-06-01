@@ -63,11 +63,6 @@ body {
     gap: 20px;
 }
 
-.game-container {
-    background-color: var(--cell-bg);
-    border-radius: 10px;
-    padding: 20px 10px;
-}
 
 header {
     display: flex;
@@ -739,6 +734,10 @@ body.light-mode .error-counter {
         gap: 12px;
         height: 100%; 
     }
+    .styled-number-grid {
+        margin-left: auto;
+        margin-right: 0;
+    }
 }
 
 .hint-counter {
@@ -811,4 +810,84 @@ body.light-mode .error-counter {
         margin-top: 4px;
         display: block;
     }
+}
+
+.styled-number-grid {
+    background: linear-gradient(120deg, #18222d 60%, #23395d 100%);
+    color: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 18px rgba(30,91,160,0.13);
+    padding: 20px 28px;
+    border: 2px solid #22304b;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 54px);
+    grid-template-rows: repeat(3, 54px);
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+    transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+}
+
+.styled-number-grid .number-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 1.55rem;
+    border-radius: 16px;
+    border: none;
+    background: linear-gradient(120deg, #24304d 60%, #1e5ba0 100%);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(30,91,160,0.08);
+    transition: 
+        background 0.2s, 
+        color 0.2s, 
+        box-shadow 0.18s, 
+        transform 0.13s;
+    font-weight: 500;
+    letter-spacing: 1px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.styled-number-grid .number-btn:hover,
+.styled-number-grid .number-btn.active {
+    background: #fff;
+    color: #1E5BA0;
+    box-shadow: 0 4px 16px rgba(30,91,160,0.15);
+    transform: translateY(-2px) scale(1.06);
+}
+
+.styled-number-grid .number-btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 4px rgba(30,91,160,0.07);
+}
+
+body.light-mode .styled-number-grid {
+    background: linear-gradient(120deg, #fff 60%, #e3e8ee 100%);
+    color: #1E5BA0;
+    border: 2px solid #bfc9d1;
+    box-shadow: 0 2px 12px rgba(30,91,160,0.06);
+}
+
+body.light-mode .styled-number-grid .number-btn {
+    background: linear-gradient(120deg, #e3e8ee 60%, #fff 100%);
+    color: #1E5BA0;
+}
+
+body.light-mode .styled-number-grid .number-btn:hover,
+body.light-mode .styled-number-grid .number-btn.active {
+    background: #1E5BA0;
+    color: #fff;
+}
+
+body.light-mode .styled-number-grid .number-btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 4px rgba(30,91,160,0.03);
 }
