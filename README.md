@@ -10,7 +10,6 @@
 
 ---
 
-=======
 ## 🎮 Demonstração
 
 <p align="center">
@@ -19,7 +18,6 @@
 
 ---
 
->>>>>>> Suzana
 ## ✨ Funcionalidades
 
 - Interface moderna e responsiva (modo escuro/claro)
