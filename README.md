@@ -1,4 +1,4 @@
-# 🧩 Sudoku Game
+# 🧩 Sudoplay
 
 > Desafie sua mente com este Sudoku interativo! Complete o tabuleiro preenchendo os números de 1 a 9 sem repetir em linhas, colunas ou blocos.
 
@@ -21,18 +21,12 @@
 ## ✨ Funcionalidades
 
 - Interface moderna e responsiva (modo escuro/claro)
-
 - Três níveis de dificuldade: Fácil, Médio, Difícil
-
-- Timer com alerta de tempo esgotado
-
+- Timer crescente mostrando quanto tempo você levou para resolver
 - Modo notas para marcações nas células
-
 - Botões de desfazer, apagar e dicas (máx. 5 dicas)
-
 - Validação automática das regras do Sudoku
-
-- Pop-ups animados para vitória e fim de tempo
+- Pop-ups animados para vitória e mensagens
 
 ---
 
@@ -67,7 +61,7 @@
 | Frontend | Lógica      |
 |----------|-------------|
 | HTML5    | JavaScript  |
-| CSS3     | script.js  |
+| CSS3     | backend.js  |
 
 </div>
 
@@ -76,13 +70,12 @@
 ## 📦 Como usar
 
 1. **Clone este repositório:**
-
    ```bash
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
-
-2. **Abra o arquivo `index.html` no seu navegador.**
    ```
-3. **Ou jogue em https://sudoplay.up.railway.app/ !! **
+2. **Abra o arquivo `index.html` no seu navegador.**
+3. **Ou jogue online em:**  
+   [https://sudoplay.up.railway.app/](https://sudoplay.up.railway.app/)
 
 ---
 
@@ -90,13 +83,15 @@
 
 - `index.html`: Estrutura do jogo
 - `styles.css`: Estilos visuais
-- `script.js` : Lógica do jogo e interações
+- `backend.js`: Lógica do jogo e interações
 
 ---
 
 ## 📝 Observações
 
-- O backend do jogo está em `script.js`.
+- O timer mostra quanto tempo você levou para resolver o Sudoku.
+- O backend do jogo está em `backend.js`.
+- O projeto não requer instalação de dependências: basta abrir o `index.html` em um navegador moderno.
 
 ---
 
