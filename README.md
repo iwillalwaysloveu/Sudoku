@@ -81,6 +81,9 @@
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
 
 2. **Abra o arquivo `index.html` no seu navegador.**
+
+3. **Ou jogue em https://sudoplay.up.railway.app/ !!**
+   
 ---
 
 ## 🗂️ Estrutura dos arquivos
