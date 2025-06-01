@@ -18,120 +18,119 @@
         <button id="popup-close">OK</button>
     </div>
 </div>
+<div class="main-flex">
+    <div class="status-bar">
+        <h2 id="timer">Tempo: 00:00</h2>
+        <div id="error-counter" class="error-counter">Erros: 0</div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"></button>
+            <h1>Sudoku</h1>
+        </div>
 
-    <body class="dark-mode">
-    <div class="main-flex">
-        <div class="container">
-            <div class="status-bar">
-                <h2 id="timer">Tempo: 00:00</h2>
-                <div id="error-counter" class="error-counter">Erros: 0</div>      </div>
-            <div class="header">
-                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"></button>
-                <h1>Sudoku</h1>
-            </div>
+        <div class="difficulty-selector">
+            <button id="easy" class="difficulty-btn active">Fácil</button>
+            <button id="medium" class="difficulty-btn">Médio</button>
+            <button id="hard" class="difficulty-btn">Difícil</button>
+        </div>
+        
+        <div class="game-container">
+         <audio id="background-music" src="music.mp3" autoplay loop></audio>
+    <div class="music-btn-wrapper" style="display:inline-block;position:relative;">
+        <button id="toggle-music" class="music-btn" aria-label="Ativar/desativar música">🔊</button>
+        <span class="music-btn-tooltip">Ativar/desativar música</span>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("background-music");
+            var btn = document.getElementById("toggle-music");
+            if (audio) audio.volume = 0.08;
+            if (btn) {
+                btn.addEventListener("click", function () {
+                    if (audio.muted || audio.paused) {
+                        audio.muted = false;
+                        audio.play();
+                        btn.textContent = "🔊";
+                    } else {
+                        audio.muted = true;
+                        btn.textContent = "🔇";
+                    }
+                });
+            }
+        });
+    </script>
 
-            <div class="difficulty-selector">
-                <button id="easy" class="difficulty-btn active">Fácil</button>
-                <button id="medium" class="difficulty-btn">Médio</button>
-                <button id="hard" class="difficulty-btn">Difícil</button>
+            <div class="sudoku-grid" id="sudoku-grid"></div>
+            
+            <div class="number-pad">
+                <div class="number-grid" id="number-grid"></div>
             </div>
             
-            <div class="game-container">
-             <audio id="background-music" src="music.mp3" autoplay loop></audio>
-<div class="music-btn-wrapper" style="display:inline-block;position:relative;">
-    <button id="toggle-music" class="music-btn" aria-label="Ativar/desativar música">🔊</button>
-    <span class="music-btn-tooltip">Ativar/desativar música</span>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var audio = document.getElementById("background-music");
-        var btn = document.getElementById("toggle-music");
-        if (audio) audio.volume = 0.08;
-        if (btn) {
-            btn.addEventListener("click", function () {
-                if (audio.muted || audio.paused) {
-                    audio.muted = false;
-                    audio.play();
-                    btn.textContent = "🔊";
-                } else {
-                    audio.muted = true;
-                    btn.textContent = "🔇";
-                }
-            });
-        }
-    });
-</script>
-
-                <div class="sudoku-grid" id="sudoku-grid"></div>
-                
-                <div class="number-pad">
-                    <div class="number-grid" id="number-grid"></div>
-                </div>
-                
-                <div class="controls">
-                    <div class="control-buttons">
-                        <!-- Botões modo escuro -->
-                        <div class="dark-buttons">
-                            <div class="control-btn-wrapper">
-                                <button class="control-button undo-btn">
-                                    <img src="https://i.ibb.co/cXyB67zZ/3-Sem-T-tulo-20250528190947.png" alt="Desfazer" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Desfaz a última ação!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button notes-btn">
-                                    <img src="https://i.ibb.co/KpC6X5S8/3-Sem-T-tulo-20250528190952.png" alt="Notas" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Anote os números incorretos!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button erase-btn">
-                                    <img src="https://i.ibb.co/dq6n3J9/3-Sem-T-tulo-20250528190956.png" alt="Apagar" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Apague o número!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button hint-btn">
-                                    <img src="https://i.ibb.co/wN3jftSV/3-Sem-T-tulo-20250528191000.png" alt="Dica" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Saiba a resposta!</span>
-                            </div>
+            <div class="controls">
+                <div class="control-buttons">
+                    <!-- Botões modo escuro -->
+                    <div class="dark-buttons">
+                        <div class="control-btn-wrapper">
+                            <button class="control-button undo-btn">
+                                <img src="https://i.ibb.co/cXyB67zZ/3-Sem-T-tulo-20250528190947.png" alt="Desfazer" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Desfaz a última ação!</span>
                         </div>
-                        <!-- Botões modo claro -->
-                        <div class="light-buttons">
-                            <div class="control-btn-wrapper">
-                                <button class="control-button undo-btn">
-                                    <img src="https://i.ibb.co/4wpTMkTF/3-Sem-T-tulo-20250529083343.png" alt="Desfazer" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Desfaz a última ação!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button notes-btn">
-                                    <img src="https://i.ibb.co/zVbJ2f5j/3-Sem-T-tulo-20250529083348.png" alt="Notas" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Anote os números incorretos!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button erase-btn">
-                                    <img src="https://i.ibb.co/XfsgnD3Z/3-Sem-T-tulo-20250529083353.png" alt="Apagar" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Apague o número!</span>
-                            </div>
-                            <div class="control-btn-wrapper">
-                                <button class="control-button hint-btn">
-                                    <img src="https://i.ibb.co/nM6mh1L5/3-Sem-T-tulo-20250529083359.png" alt="Dica" class="button-icon">
-                                </button>
-                                <span class="control-btn-tooltip">Saiba a resposta!</span>
-                            </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button notes-btn">
+                                <img src="https://i.ibb.co/KpC6X5S8/3-Sem-T-tulo-20250528190952.png" alt="Notas" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Anote os números incorretos!</span>
+                        </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button erase-btn">
+                                <img src="https://i.ibb.co/dq6n3J9/3-Sem-T-tulo-20250528190956.png" alt="Apagar" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Apague o número!</span>
+                        </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button hint-btn">
+                                <img src="https://i.ibb.co/wN3jftSV/3-Sem-T-tulo-20250528191000.png" alt="Dica" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Saiba a resposta!</span>
+                        </div>
+                    </div>
+                    <!-- Botões modo claro -->
+                    <div class="light-buttons">
+                        <div class="control-btn-wrapper">
+                            <button class="control-button undo-btn">
+                                <img src="https://i.ibb.co/4wpTMkTF/3-Sem-T-tulo-20250529083343.png" alt="Desfazer" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Desfaz a última ação!</span>
+                        </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button notes-btn">
+                                <img src="https://i.ibb.co/zVbJ2f5j/3-Sem-T-tulo-20250529083348.png" alt="Notas" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Anote os números incorretos!</span>
+                        </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button erase-btn">
+                                <img src="https://i.ibb.co/XfsgnD3Z/3-Sem-T-tulo-20250529083353.png" alt="Apagar" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Apague o número!</span>
+                        </div>
+                        <div class="control-btn-wrapper">
+                            <button class="control-button hint-btn">
+                                <img src="https://i.ibb.co/nM6mh1L5/3-Sem-T-tulo-20250529083359.png" alt="Dica" class="button-icon">
+                            </button>
+                            <span class="control-btn-tooltip">Saiba a resposta!</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="https://github.com/iwillalwaysloveu/Sudoku" target="_blank" class="github-btn">
-                ⭐ Ver projeto no GitHub
-            </a>
-        </div> 
+        </div>
+        <a href="https://github.com/iwillalwaysloveu/Sudoku" target="_blank" class="github-btn">
+            ⭐ Ver projeto no GitHub
+        </a>
     </div> 
-    <script src="script.js"></script>
+</div> 
+<script src="script.js"></script>
 </body>
 </html>

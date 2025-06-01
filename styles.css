@@ -713,5 +713,56 @@ body.light-mode .error-counter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 8px;
+    justify-content: center;
+    margin-bottom: 12px;
+    gap: 6px;
+}
+
+@media (min-width: 701px) {
+    .main-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 32px;
+    }
+    .container {
+        flex: none;
+    }
+    .status-bar {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin-bottom: 0;
+        margin-right: 24px;
+        min-width: 120px;
+        gap: 12px;
+    }
+    .game-container {
+        flex: none;
+    }
+    /* Coloque o status-bar ao lado do sudoku */
+    .main-flex {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    .status-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        gap: 16px;
+        width: 100%;
+    }
+    #timer, .error-counter {
+        font-size: 1rem;
+        text-align: center;
+    }
 }
