@@ -425,13 +425,12 @@ body.light-mode #timer {
     transform: scale(1.04);
 }
 
-/* Centraliza os botões no pop-up */
 .popup-content button {
     margin-top: 10px;
     margin-bottom: 0;
 }
 
-/* Se quiser alinhar os botões lado a lado */
+
 #popup-restart, #popup-cancel {
     display: inline-block;
     margin-top: 10px;
@@ -487,13 +486,12 @@ body.light-mode #timer {
         font-size: 1rem;
         text-align: center;
         margin: 0;
-    }
-
-    .error-counter {
-        font-size: 1rem;
-        margin: 4px 0 10px 0;
-        text-align: center;
+        min-width: 0;
         width: 100%;
+        box-sizing: border-box;
+        padding: 6px 0;
+        border-radius: 20px;
+      
     }
 
     .difficulty-selector {
@@ -610,7 +608,6 @@ body.light-mode #timer {
     border: none;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    /* Centraliza em qualquer contexto */
     width: fit-content;
 }
 
@@ -734,7 +731,7 @@ body.light-mode .error-counter {
 @media (min-width: 701px) {
     .status-bar {
         flex-direction: column;
-        align-items: center;   /* <-- centraliza */
+        align-items: center;  
         justify-content: center; 
         margin-bottom: 0;
         margin-right: 24px;
@@ -745,12 +742,11 @@ body.light-mode .error-counter {
 }
 
 .hint-counter {
-    display: block;
-    font-size: 0.95rem;
-    color: #1e88e5;
-    margin-top: 2px;
-    text-align: center;
     width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 4px;
+    display: block;
 }
 
 @media (min-width: 701px) {
@@ -767,7 +763,7 @@ body.light-mode .error-counter {
     }
     .status-bar {
         flex-direction: column;
-        align-items: center;   /* <-- centraliza */
+        align-items: center;  
         justify-content: center; 
         margin-bottom: 0;
         margin-right: 24px;
@@ -794,16 +790,25 @@ body.light-mode .error-counter {
         font-size: 1rem;
         text-align: center;
         margin: 0;
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 6px 0;
+        border-radius: 20px;
     }
     .control-btn-wrapper {
         width: 100%;
         text-align: center;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .hint-counter {
         width: 100%;
         text-align: center;
         font-size: 1rem;
         margin-top: 4px;
+        display: block;
     }
 }
