@@ -471,20 +471,27 @@ body.light-mode #timer {
     }
 
     .status-bar {
-        margin-bottom: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 6px;
+        margin-top: 8px;
+        width: 100%;
     }
 
     #timer {
         font-size: 1.05rem;
         padding: 7px 12px;
-        margin-top: 8px;
-        margin-bottom: 8px;
+        margin: 0;
+        text-align: center;
+        width: 100%;
     }
 
     .error-counter {
         font-size: 1rem;
-        margin-top: 0;
-        margin-bottom: 10px;
+        margin: 4px 0 10px 0;
+        text-align: center;
+        width: 100%;
     }
 
     .difficulty-selector {
