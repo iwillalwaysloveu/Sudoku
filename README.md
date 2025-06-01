@@ -69,9 +69,6 @@
 | Frontend | Lógica      |
 |----------|-------------|
 | HTML5    | JavaScript  |
-<<<<<<< HEAD
-| CSS3     |             |
-=======
 | CSS3     | script.js  |
 
 
@@ -84,18 +81,8 @@
 1. **Clone este repositório:**
    ```bash
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
-<<<<<<< HEAD
 
 2. **Abra o arquivo `index.html` no seu navegador.**
-=======
-   ```
-2. **Vá para a branch Suzana:**
-   ```bash
-   git switch Suzana
-   ```
-3. **Abra o arquivo `index.html` no seu navegador.**
->>>>>>> Suzana
-
 ---
 
 ## 🗂️ Estrutura dos arquivos
@@ -108,19 +95,12 @@
 
 ## 📝 Observações
 
-<<<<<<< HEAD
 - O backend do jogo está em `script.js`.
-=======
-- O backend do jogo está em `backend.js`.
-- Para publicar na web, use o `script.js` (versão ofuscada para dificultar a leitura do código).
-
 ---
 
 ## 👨‍💻 Autor
 
 - Feito por [iwillalwaysloveu](https://github.com/iwillalwaysloveu)
-
-=======
 - Aprimorado por [Charaktane](https://github.com/Charaktane)
 
 ---
@@ -133,6 +113,4 @@ Este projeto está sob a licença MIT.
 
 <p align="center">
   <sub>⭐️ Deixe uma estrela se gostou do projeto!</sub>
-</p>
-=======
 </p>
