@@ -47,9 +47,9 @@ body {
     align-items: center;      
     gap: 40px;                
 }
-/*#timer {
+#timer {
     margin: 0;
-} */
+} 
 
 .container {
     background-color: var(--bg-color);
@@ -356,7 +356,7 @@ body.light-mode .light-buttons { display: flex; }
     transform: scale(1.04);
 }
 
-/* Timer 
+/* Timer */
 #timer {
     display: inline-block;
     background: linear-gradient(90deg, #1E5BA0 60%, #17487e 100%);
@@ -373,13 +373,13 @@ body.light-mode .light-buttons { display: flex; }
     transition: background 0.3s, color 0.3s;
     text-shadow: 0 1px 2px #0002;
 }
-/*body.light-mode #timer {
+body.light-mode #timer {
     background: linear-gradient(90deg, #fff 60%, #e3e8ee 100%);
     color: #1E5BA0;
     border: 2px solid #bfc9d1;
     box-shadow: 0 2px 12px rgba(30,91,160,0.06);
     text-shadow: none;
-} */
+} 
 
 #popup-restart, .popup-restart {
     display: inline-block;
