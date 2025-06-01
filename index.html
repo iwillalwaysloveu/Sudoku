@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudoku rock n roll</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <div class="header">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema"></button>
+            <h1>Sudoku</h1>
+        </div>
+        
+        <div class="difficulty-selector">
+            <button id="easy" class="difficulty-btn active">Fácil</button>
+            <button id="medium" class="difficulty-btn">Médio</button>
+            <button id="hard" class="difficulty-btn">Difícil</button>
+        </div>
+        
+        <div class="game-container">
+            <div class="sudoku-grid" id="sudoku-grid"></div>
+            
+            <div class="number-pad">
+                <div class="number-grid" id="number-grid"></div>
+            </div>
+            
+            <div class="controls">
+                <button id="new-game" class="control-button new-game">
+                    <img src="https://i.ibb.co/qYSqrjVf/bot-o-novo-jogo.png" alt="Novo Jogo" class="button-icon">
+                </button>
+                
+                <div class="control-buttons">
+                    <button id="undo" class="control-button">
+                        <img src="https://i.ibb.co/cXyB67zZ/3-Sem-T-tulo-20250528190947.png" alt="Desfazer" class="button-icon">
+                    </button>
+                    <button id="notes" class="control-button">
+                        <img src="https://i.ibb.co/KpC6X5S8/3-Sem-T-tulo-20250528190952.png" alt="Notas" class="button-icon">
+                    </button>
+                    <button id="erase" class="control-button">
+                        <img src="https://i.ibb.co/dq6n3J9/3-Sem-T-tulo-20250528190956.png" alt="Apagar" class="button-icon">
+                    </button>
+                    <button id="hint" class="control-button">
+                        <img src="https://i.ibb.co/wN3jftSV/3-Sem-T-tulo-20250528191000.png" alt="Dica" class="button-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
