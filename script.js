@@ -52,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let difficulty = "easy"; // Dificuldade atual
   let dicasUsadas = 0;
   const maxDicas = 5;
-
-  // Variáveis do timer (COLOQUE ANTES DE initGame e da chamada dela)
+  // Tempo total do jogo em segundos
   let tempoTotal = 150;
   let intervalo;
   let timerIniciado = false;
@@ -150,13 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let cellsToRemove;
     switch (difficulty) {
       case "easy":
-        cellsToRemove = 30; // ~45-50 células restantes
+        cellsToRemove = 30; 
         break;
       case "medium":
-        cellsToRemove = 40; // ~35-40 células restantes
+        cellsToRemove = 40; 
         break;
       case "hard":
-        cellsToRemove = 50; // ~25-30 células restantes
+        cellsToRemove = 50; 
         break;
       default:
         cellsToRemove = 45;
