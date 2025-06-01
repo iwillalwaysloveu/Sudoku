@@ -81,14 +81,8 @@
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
 
 2. **Abra o arquivo `index.html` no seu navegador.**
-=======
    ```
-2. **Vá para a branch Suzana:**
-   ```bash
-   git switch Suzana
-   ```
-3. **Abra o arquivo `index.html` no seu navegador.**
->>>>>>> Suzana
+3. **Ou jogue em https://sudoplay.up.railway.app/ !! **
 
 ---
 
@@ -103,9 +97,6 @@
 ## 📝 Observações
 
 - O backend do jogo está em `script.js`.
-=======
-- O backend do jogo está em `backend.js`.
-- Para publicar na web, use o `script.js` (versão ofuscada para dificultar a leitura do código).
 
 ---
 
