@@ -360,7 +360,7 @@ body.light-mode .light-buttons { display: flex; }
 
 /* Timer */
 #timer {
-    display: inline-block;
+    display: block;
     background: linear-gradient(90deg, #1E5BA0 60%, #17487e 100%);
     color: #fff;
     font-size: 1.35rem;
@@ -374,6 +374,9 @@ body.light-mode .light-buttons { display: flex; }
     border: 2px solid #fff2;
     transition: background 0.3s, color 0.3s;
     text-shadow: 0 1px 2px #0002;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 body.light-mode #timer {
     background: linear-gradient(90deg, #fff 60%, #e3e8ee 100%);
@@ -474,17 +477,16 @@ body.light-mode #timer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 6px;
-        margin-top: 8px;
+        justify-content: center;
+        margin-bottom: 8px;
+        gap: 8px;
         width: 100%;
     }
 
-    #timer {
-        font-size: 1.05rem;
-        padding: 7px 12px;
-        margin: 0;
+    #timer, .error-counter {
+        font-size: 1rem;
         text-align: center;
-        width: 100%;
+        margin: 0;
     }
 
     .error-counter {
@@ -604,23 +606,21 @@ body.light-mode #timer {
     border-radius: 24px;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 12px;
     font-size: 1rem;
     border: none;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
+    /* Centraliza em qualquer contexto */
+    width: fit-content;
 }
-.github-btn:hover {
-    background: #444d56;
-}
-body.light-mode .github-btn {
-    background: #fff;
-    color: #1E5BA0;
-    border: 2px solid #bfc9d1;
-}
-body.light-mode .github-btn:hover {
-    background: #e3e8ee;
-    color: #17487e;
+
+@media (max-width: 700px) {
+    .github-btn {
+        margin: 18px auto 0 auto;
+        width: 90vw;
+        max-width: 340px;
+        text-align: center;
+    }
 }
 
 .music-btn {
@@ -667,6 +667,8 @@ body.light-mode .github-btn:hover {
 .control-btn-wrapper {
     position: relative;
     display: inline-block;
+    width: 100%;
+    text-align: center;
 }
 .control-btn-tooltip {
     visibility: hidden;
@@ -691,22 +693,33 @@ body.light-mode .github-btn:hover {
     opacity: 1;
 }
 
-.error-counter {
-    font-size: 1.1rem;
-    color: #11398f; /* cor para modo escuro */
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    text-align: center;
-}
-
-body.light-mode .error-counter {
-    color: #4c3ec4; /* cor mais viva para modo claro */
-}
-
 #error-counter, .error-counter {
-    margin-top: 8px;
-    margin-bottom: 16px;
+    display: block;
+    background: linear-gradient(90deg, #1E5BA0 60%, #17487e 100%);
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 500;
+    padding: 10px 32px;
+    border-radius: 32px;
+    box-shadow: 0 2px 12px rgba(30,91,160,0.10);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    margin-top: 18px;
+    border: 2px solid #fff2;
+    transition: background 0.3s, color 0.3s;
+    text-shadow: 0 1px 2px #0002;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.light-mode #error-counter,
+body.light-mode .error-counter {
+    background: linear-gradient(90deg, #fff 60%, #e3e8ee 100%);
+    color: #1E5BA0;
+    border: 2px solid #bfc9d1;
+    box-shadow: 0 2px 12px rgba(30,91,160,0.06);
+    text-shadow: none;
 }
 
 .status-bar {
@@ -716,6 +729,28 @@ body.light-mode .error-counter {
     justify-content: center;
     margin-bottom: 12px;
     gap: 6px;
+}
+
+@media (min-width: 701px) {
+    .status-bar {
+        flex-direction: column;
+        align-items: center;   /* <-- centraliza */
+        justify-content: center; 
+        margin-bottom: 0;
+        margin-right: 24px;
+        min-width: 120px;
+        gap: 12px;
+        height: 100%; 
+    }
+}
+
+.hint-counter {
+    display: block;
+    font-size: 0.95rem;
+    color: #1e88e5;
+    margin-top: 2px;
+    text-align: center;
+    width: 100%;
 }
 
 @media (min-width: 701px) {
@@ -732,8 +767,8 @@ body.light-mode .error-counter {
     }
     .status-bar {
         flex-direction: column;
-        align-items: flex-end;
-        justify-content: center; /
+        align-items: center;   /* <-- centraliza */
+        justify-content: center; 
         margin-bottom: 0;
         margin-right: 24px;
         min-width: 120px;
@@ -746,21 +781,29 @@ body.light-mode .error-counter {
 }
 
 @media (max-width: 700px) {
-    .main-flex {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-    }
     .status-bar {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-bottom: 8px;
-        gap: 16px;
+        gap: 8px;
         width: 100%;
     }
     #timer, .error-counter {
         font-size: 1rem;
         text-align: center;
+        margin: 0;
+    }
+    .control-btn-wrapper {
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .hint-counter {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 4px;
     }
 }
