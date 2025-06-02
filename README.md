@@ -13,7 +13,9 @@
 ## 🎮 Demonstração
 
 <p align="center">
-    <img src="demo.gif" alt="Sudoku em ação" width="400"/>
+    <img src="demoPC.gif" alt="Sudoku em pc" width="400"/>
+    <img src="demoPhone.gif" alt="Sudoku em celular" width="400"/>
+
 </p>
 
 ---
