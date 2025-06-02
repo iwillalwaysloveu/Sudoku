@@ -61,7 +61,7 @@
 | Frontend | Lógica      |
 |----------|-------------|
 | HTML5    | JavaScript  |
-| CSS3     | backend.js  |
+| CSS3     | script.js  |
 
 </div>
 
@@ -83,14 +83,13 @@
 
 - `index.html`: Estrutura do jogo
 - `styles.css`: Estilos visuais
-- `backend.js`: Lógica do jogo e interações
+- `script.js`: Lógica do jogo e interações
 
 ---
 
 ## 📝 Observações
 
 - O timer mostra quanto tempo você levou para resolver o Sudoku.
-- O backend do jogo está em `backend.js`.
 - O projeto não requer instalação de dependências: basta abrir o `index.html` em um navegador moderno.
 
 ---
