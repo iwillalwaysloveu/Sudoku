@@ -1006,3 +1006,15 @@ body.light-mode .styled-number-grid .number-btn.active {
         gap: 8px;
     }
 }
+
+.cell.correct {
+    color: #1E5BA0 !important;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .cell.correct {
+        color: #1E5BA0 !important;
+        font-weight: bold !important;
+    }
+}
