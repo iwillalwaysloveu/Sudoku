@@ -1,4 +1,4 @@
-# 🧩 Sudoplay
+# 🧩 Sudoku Game
 
 > Desafie sua mente com este Sudoku interativo! Complete o tabuleiro preenchendo os números de 1 a 9 sem repetir em linhas, colunas ou blocos.
 
@@ -13,7 +13,9 @@
 ## 🎮 Demonstração
 
 <p align="center">
-    <img src="demo.gif" alt="Sudoku em ação" width="400"/>
+    <img src="demoPC.gif" alt="Sudoku em pc" width="400"/>
+    <img src="demoPhone.gif" alt="Sudoku em celular" width="400"/>
+
 </p>
 
 ---
@@ -21,12 +23,16 @@
 ## ✨ Funcionalidades
 
 - Interface moderna e responsiva (modo escuro/claro)
+
 - Três níveis de dificuldade: Fácil, Médio, Difícil
-- Timer crescente mostrando quanto tempo você levou para resolver
+
 - Modo notas para marcações nas células
+
 - Botões de desfazer, apagar e dicas (máx. 5 dicas)
+
 - Validação automática das regras do Sudoku
-- Pop-ups animados para vitória e mensagens
+
+- Pop-ups animados para vitória
 
 ---
 
@@ -73,9 +79,8 @@
    ```bash
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
    ```
+
 2. **Abra o arquivo `index.html` no seu navegador.**
-3. **Ou jogue online em:**  
-   [https://sudoplay.up.railway.app/](https://sudoplay.up.railway.app/)
 
 ---
 
@@ -83,14 +88,13 @@
 
 - `index.html`: Estrutura do jogo
 - `styles.css`: Estilos visuais
-- `script.js`: Lógica do jogo e interações
+- `script.js` : Lógica do jogo e interações
 
 ---
 
 ## 📝 Observações
 
-- O timer mostra quanto tempo você levou para resolver o Sudoku.
-- O projeto não requer instalação de dependências: basta abrir o `index.html` em um navegador moderno.
+- Para publicar na web, use o `script.js`.
 
 ---
 
