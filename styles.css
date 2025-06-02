@@ -44,8 +44,10 @@ body {
 
 .main-flex {
     display: flex;
-    align-items: center;      
-    gap: 40px;                
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
 }
 #timer {
     margin: 0;
@@ -177,7 +179,12 @@ header {
 }
 
 .number-pad {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
+    margin-top: 0;
     border: #C3CDD9 2px solid;
 }
 
@@ -434,152 +441,124 @@ body.light-mode #timer {
 
 /* Responsividade */
 @media (max-width: 700px) {
+    html, body {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
     body {
         padding: 4px;
         min-height: 100vh;
         align-items: flex-start;
     }
-
     .main-flex {
         flex-direction: column;
         align-items: stretch;
         gap: 8px;
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
-
+    .status-bar {
+        order: 1;
+    }
+    .side-panel {
+        order: 2;
+    }
+    .container {
+        order: 3;
+    }
+    .github-btn, .github-link {
+        order: 4;
+        margin-top: 18px;
+        margin-bottom: 0;
+        align-self: center;
+    }
     .container {
         max-width: 100vw;
         min-width: 0;
+        width: 100vw;
+        box-sizing: border-box;
         padding: 2vw 0 2vw 0;
         border-radius: 0;
         box-shadow: none;
         min-height: 100vh;
         gap: 8px;
     }
-
-    .header {
-        flex-direction: column;
-        gap: 6px;
-        align-items: center;
-    }
-
-    .header h1 {
-        font-size: 1.1rem;
-        text-align: center;
-    }
-
-    .status-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 8px;
-        gap: 8px;
-        width: 100%;
-    }
-
-    #timer, .error-counter {
-        font-size: 1rem;
-        text-align: center;
-        margin: 0;
-        min-width: 0;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 6px 0;
-        border-radius: 20px;
-      
-    }
-
-    .difficulty-selector {
-        gap: 4px;
-    }
-
-    .difficulty-btn {
-        font-size: 0.98rem;
-        padding: 7px 0;
-        border-radius: 4px;
-    }
-
-    .game-container {
-        padding: 1vw 0;
-        border-radius: 0;
-    }
-
     .sudoku-grid {
-        width: 98vw;
-        min-width: 98vw;
-        max-width: 98vw;
+        width: 96vw;
+        min-width: 96vw;
+        max-width: 96vw;
         aspect-ratio: 1/1;
         font-size: 0.92rem;
         border-radius: 0;
+        margin: 0 auto 8px auto;
     }
-
     .cell {
         font-size: 0.98rem;
         min-width: 8vw;
         min-height: 8vw;
         padding: 0;
     }
-
     .number-pad {
         margin-top: 6px;
         border-radius: 0;
         border-width: 1px;
         padding: 2px 0;
     }
-
     .number-grid {
-        gap: 2px;
-        border-radius: 0;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        gap: 2px !important;
+        width: 96vw !important;
+        max-width: 96vw !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        justify-content: flex-start !important;
+        background: none !important;
     }
-
-    .number-btn, .button-icon {
-        width: 9vw;
-        height: 9vw;
-        min-width: 28px;
-        min-height: 28px;
-        max-width: 40px;
-        max-height: 40px;
-        font-size: 0.98rem;
-        padding: 0;
-        border-radius: 4px;
+    .number-btn {
+        min-width: 32px !important;
+        min-height: 32px !important;
+        width: 9vw !important;
+        height: 9vw !important;
+        max-width: 38px !important;
+        max-height: 38px !important;
+        font-size: 1rem !important;
+        flex: 0 0 auto !important;
     }
-
     .controls {
         gap: 6px;
         margin-top: 6px;
     }
-
     .control-buttons {
         gap: 2px;
         width: 100%;
     }
-
-    .github-btn {
-        font-size: 0.93rem;
-        padding: 7px 8px;
-        margin-left: 0;
-        margin-top: 4px;
+    .hint-counter {
+        display: none !important;
     }
-
-    .popup-content {
-        padding: 12px 3vw 12px 3vw;
-        min-width: 0;
-        max-width: 98vw;
-        border-radius: 8px;
+    .styled-number-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2px;
+        width: 96vw;
+        max-width: 96vw;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: flex-start;
+        align-items: center;
     }
-
-    .music-btn {
-        font-size: 1.2rem;
-        margin-left: 4px;
-        margin-bottom: 4px;
-    }
-
-    .music-btn-tooltip,
-    .control-btn-tooltip {
-        font-size: 0.92rem;
-        padding: 3px 8px;
-        border-radius: 5px;
-        top: 105%;
+    .styled-number-grid .number-btn {
+        min-width: 32px;
+        min-height: 32px;
+        width: 9vw;
+        height: 9vw;
+        max-width: 38px;
+        max-height: 38px;
+        font-size: 1rem;
+        flex: 0 0 auto;
     }
 }
 
@@ -718,9 +697,10 @@ body.light-mode .error-counter {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-    gap: 6px;
+    justify-content: flex-start;
+    min-width: 140px;
+    margin-top: 0;
+    gap: 18px;
 }
 
 @media (min-width: 701px) {
@@ -733,6 +713,7 @@ body.light-mode .error-counter {
         min-width: 120px;
         gap: 12px;
         height: 100%; 
+        margin-top: 80px; 
     }
     .styled-number-grid {
         margin-left: auto;
@@ -804,80 +785,97 @@ body.light-mode .error-counter {
         justify-content: center;
     }
     .hint-counter {
-        width: 100%;
-        text-align: center;
-        font-size: 1rem;
-        margin-top: 4px;
-        display: block;
+        display: none !important;
+    }
+    #error-counter, .error-counter {
+        background: none !important;
+        color: inherit !important;
+        font-size: 1.1rem !important;
+        font-weight: 500 !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        margin: 0 !important;
+        text-align: center !important;
+        display: inline !important;
+    }
+}
+
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+    min-width: 260px;
+    margin-left: 32px;
+    /* Centraliza verticalmente em relação ao tabuleiro */
+    justify-content: center;
+    height: 100%;
+}
+
+@media (min-width: 701px) {
+    .main-flex {
+        align-items: flex-start;
+    }
+    .side-panel {
+        /* Centraliza verticalmente em relação ao tabuleiro */
+        justify-content: center;
+        height: 100%;
     }
 }
 
 .styled-number-grid {
-    background: linear-gradient(120deg, #18222d 60%, #23395d 100%);
+    margin-top: 0;
+    margin-bottom: 0;
+    background: (90deg, #444f5c 60%, #17487e 100%);
     color: #fff;
-    border-radius: 24px;
-    box-shadow: 0 4px 18px rgba(30,91,160,0.13);
-    padding: 20px 28px;
-    border: 2px solid #22304b;
+    border-radius: 32px;
+    box-shadow: 0 2px 12px rgba(30,91,160,0.10);
+    padding: 18px 24px;
+    border: 2px solid #fff2;
     margin-left: auto;
     margin-right: 0;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 18px;
+    margin-bottom: 24px;
     width: fit-content;
     display: grid;
-    grid-template-columns: repeat(3, 54px);
-    grid-template-rows: repeat(3, 54px);
-    gap: 16px;
+    grid-template-columns: repeat(3, 48px); 
+    grid-template-rows: repeat(3, 48px);    
+    gap: 12px;
     justify-content: center;
     align-content: center;
-    transition: background 0.3s, color 0.3s, box-shadow 0.2s;
+    transition: background 0.3s, color 0.3s;
 }
 
 .styled-number-grid .number-btn {
-    width: 54px;
-    height: 54px;
-    font-size: 1.55rem;
-    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    border-radius: 12px;
     border: none;
-    background: linear-gradient(120deg, #24304d 60%, #1e5ba0 100%);
+    background: #23395d;
     color: #fff;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(30,91,160,0.08);
-    transition: 
-        background 0.2s, 
-        color 0.2s, 
-        box-shadow 0.18s, 
-        transform 0.13s;
-    font-weight: 500;
-    letter-spacing: 1px;
-    outline: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: background 0.2s, color 0.2s;
 }
 
 .styled-number-grid .number-btn:hover,
 .styled-number-grid .number-btn.active {
     background: #fff;
     color: #1E5BA0;
-    box-shadow: 0 4px 16px rgba(30,91,160,0.15);
-    transform: translateY(-2px) scale(1.06);
-}
-
-.styled-number-grid .number-btn:active {
-    transform: scale(0.96);
-    box-shadow: 0 1px 4px rgba(30,91,160,0.07);
 }
 
 body.light-mode .styled-number-grid {
-    background: linear-gradient(120deg, #fff 60%, #e3e8ee 100%);
+    background: linear-gradient(90deg, #fff 60%, #e3e8ee 100%);
     color: #1E5BA0;
     border: 2px solid #bfc9d1;
     box-shadow: 0 2px 12px rgba(30,91,160,0.06);
 }
 
 body.light-mode .styled-number-grid .number-btn {
-    background: linear-gradient(120deg, #e3e8ee 60%, #fff 100%);
+    background: #e3e8ee;
     color: #1E5BA0;
 }
 
@@ -887,7 +885,32 @@ body.light-mode .styled-number-grid .number-btn.active {
     color: #fff;
 }
 
-body.light-mode .styled-number-grid .number-btn:active {
-    transform: scale(0.96);
-    box-shadow: 0 1px 4px rgba(30,91,160,0.03);
+.status-numbers-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 700px) {
+    .controls {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        margin: 0 auto;
+        gap: 10px;
+    }
+    .control-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 96vw;
+        max-width: 96vw;
+        margin: 0 auto;
+        gap: 8px;
+    }
 }
