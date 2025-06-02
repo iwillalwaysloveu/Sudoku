@@ -572,7 +572,7 @@ body.light-mode #timer {
         display: flex !important;
         flex-direction: row !important;
         overflow-x: auto !important;
-        gap: 7.39px !important;
+        gap: 7.3px !important;
         width: 96vw !important;
         max-width: 96vw !important;
         margin: 0 auto !important;
