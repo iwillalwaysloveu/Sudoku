@@ -196,7 +196,6 @@ header {
 
 .number-grid {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
     gap: 5px;
     border-radius: 2px;
 }
@@ -821,7 +820,6 @@ body.light-mode .error-counter {
     gap: 28px;
     min-width: 260px;
     margin-left: 32px;
-    /* Centraliza verticalmente em relação ao tabuleiro */
     justify-content: center;
     height: 100%;
 }
@@ -831,7 +829,6 @@ body.light-mode .error-counter {
         align-items: flex-start;
     }
     .side-panel {
-        /* Centraliza verticalmente em relação ao tabuleiro */
         justify-content: center;
         height: 100%;
     }
@@ -924,4 +921,11 @@ body.light-mode .styled-number-grid .number-btn.active {
         margin: 0 auto;
         gap: 8px;
     }
+}
+
+.styled-number-grid {
+    gap: 0 !important;
+}
+.styled-number-grid .number-btn:not(:nth-child(9)) {
+    margin-right: 7.2px;
 }
