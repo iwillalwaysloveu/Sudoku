@@ -13,8 +13,8 @@
 ## 🎮 Demonstração
 
 <p align="center">
-    <img src="demoPC.gif" alt="Sudoku em pc" width="400"/>
-    <img src="demoPhone.gif" alt="Sudoku em celular" width="400"/>
+    <img src="/src/demoPC.gif" alt="Sudoku em pc" width="400"/>
+    <img src="/src/demoPhone.gif" alt="Sudoku em celular" width="400"/>
 
 </p>
 
@@ -81,7 +81,7 @@
    ```bash
    git clone https://github.com/iwillalwaysloveu/Sudoku.git
    ```
-2. **Vá para a branch Suzana:**
+2. **Vá para a branch Suzana, caso queira jogar no pc:**
    ```bash
    git switch Suzana
    ```
@@ -99,9 +99,7 @@
 
 ## 📝 Observações
 
-- O backend do jogo está em `backend.js`.
-- Para publicar na web, use o `script.js` (versão ofuscada para dificultar a leitura do código).
-
+- Para publicar na web, use o `script.js`.
 ---
 
 ## 👨‍💻 Autor
