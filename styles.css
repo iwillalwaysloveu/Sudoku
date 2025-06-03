@@ -645,7 +645,6 @@ body.light-mode #timer {
     align-items: center;
     gap: 8px;
     justify-content: center;
-    margin: 32px auto 0 auto;
     text-align: center;
     background: #24292f;
     color: #fff;
@@ -1017,4 +1016,20 @@ body.light-mode .styled-number-grid .number-btn.active {
         color: #1E5BA0 !important;
         font-weight: bold !important;
     }
+}
+
+.footer-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.rato-icone {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-left: 0px;
 }
