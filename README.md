@@ -13,8 +13,8 @@
 ## 🎮 Demonstração
 
 <p align="center">
-    <img src="20250602-1409-14.2600003.gif" alt="Sudoku em pc" width="400"/>
-    <img src="demoPhone.gif" alt="Sudoku em celular" width="400"/>
+    <img src="/src/gifs/20250602-1409-14.2600003.gif" alt="Sudoku em pc" width="400"/>
+    <img src="/src/gifs/demoPhone.gif" alt="Sudoku em celular" width="400"/>
 
 </p>
 
